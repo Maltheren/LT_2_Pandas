@@ -33,7 +33,7 @@ def file_get_meas(Name: str, lines: list[str]):
         index = n
         break
     if(index == -1):
-        raise Exception("[Kat der srkiger]: Kunne ikke finde den .meas variabel i filen")
+        raise Exception("[Kat der srkiger]: Kunne ikke finde {} .meas variabel i filen".format(Name))
     
 
     results = []
@@ -65,7 +65,7 @@ def file_get_step(Name: str, lines: list[str]):
 
         
     if(len(output) == 0): ##Listen er tom så der nok gået noget galt
-        raise Exception("[Kat der srkiger]: Kunne ikke finde den .step variabel i filen")
+        raise Exception("[Kat der srkiger]: Kunne ikke finde {}= .step variabel i filen".format(Name))
     
     return output
 
@@ -91,8 +91,6 @@ def file_get_THD(Name: str, lines: list[str]):
         raise Exception("[Kat der srkiger]: Kunne ikke finde {} som en .fourier".format(Name))
     
     return output_total
-
-
 
 
 
